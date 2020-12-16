@@ -1,6 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useContext} from 'react'
+import {dispatchContext} from './Main'
+
 
 function AddNote(props) {
+    // console.log(dispatchContext)
+    const dispatchFunction = useContext(dispatchContext)
+
     const [noteTemp, setNoteTemp] = useState({
         id:'',
         body:'',
@@ -9,7 +14,7 @@ function AddNote(props) {
 
     const onSubmit = e => {
         e.preventDefault()
-        props.notesSubmitHandler(noteTemp)
+        dispatchFunction({type:"add", state: noteTemp})
         setNoteTemp({id:'',body:'',color:''})
     }
 

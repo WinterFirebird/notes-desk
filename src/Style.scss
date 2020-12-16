@@ -1,4 +1,6 @@
-
+* {
+    box-sizing: border-box;
+}
 
 .notes-grid {
     margin: {
@@ -16,6 +18,55 @@
     border:1px solid;
 }
 
+.note {
+    // height: 350px;
+    display: flex;
+    flex-direction: column;
+    &-toolbar {
+        background-color: rgba(256,256,256,0.7);
+        padding: 5px;
+        display: flex;
+        justify-content: flex-end;
 
+        i {
+            font-size: 1.2rem;
+        }
+    }
+
+    &-body {
+        flex-grow: 1;
+        textarea {
+            width: 97%;
+            height: 95%;
+            background: none;
+            border:none;
+            outline:none;
+            color: inherit;
+            padding: 10px 5px;
+            resize:none;
+            font-size:1rem;
+            font-family:inherit;
+        }
+    }
+    
+}
+
+.note button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.note-textarea {
+    background: none;
+    border:none;
+    outline:none;
+    width: 97%;
+    height: 220px;
+    padding: 10px 5px;
+    resize:none;
+    font-size:1rem;
+    font-family:inherit;
+}
 
 
