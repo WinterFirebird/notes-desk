@@ -1,26 +1,25 @@
-import React, {useReducer, useEffect} from 'react'
+import React, { useReducer } from 'react'
 import Notes from './Notes'
 import AddNote from './AddNote'
 
 export const dispatchContext = React.createContext()
 
 function Main() {
-    console.log("Main - rendering")
 
     const initialState = [
         {
             id:147286491,
-            body: "Welcome to Sticky Notes! You can add your own notes here :)",
-            color: "#FEF3BD"
+            body: "Welcome to NotesDesk! \n\nYou can add your own notes here by clicking on the plus icon. \nTo edit the note or change its color, simply click on it. \nHave a great experience!",
+            color: "#FEF3BD",
+            timeAdded: 1608212136484,
         }
     ]
 
     
-    const reducer = (value, action={type:null, state:null, id:null, color:null}) => {
+    const reducer = (value, action={type:null, state:null, id:null, color:null, timeAdded:null}) => {
         if(action.type === "edit") {
             let newNotes = value;
-            let index = value.findIndex(note => note.id == action.id);
-            console.log(index)
+            let index = value.findIndex(note => note.id === action.id);
             newNotes[index].color = action.color
             newNotes[index].body = action.body
             return [...newNotes]
@@ -30,18 +29,14 @@ function Main() {
             return newNotes
         }
         if(action.type === "add") {
-            let uniqueId = Math.floor(Math.random() * Math.pow(10, 9)) + 1
-            let readyNewNote = action.state
-            readyNewNote.id = uniqueId
-            console.log(`Value of the state: `)
-            console.log(value)
-            console.log(`Value to be returned: `)
-            console.log([...value, readyNewNote])
-            return ([...value, readyNewNote])
+            let newNote = action.state
+            newNote.timeAdded = action.timeAdded
+            return [...value, newNote]
         }
         else {return value}
     }
 
+    
     const [notes, dispatch] = useReducer(reducer,initialState)
 
     return (

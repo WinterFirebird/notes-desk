@@ -2,10 +2,12 @@ import React from 'react'
 import Note from './Note'
 
 function Notes(props) {
-    console.log("Notes - rendering")
 
     const notes = props.notes
-    const notesJSX = notes.map(note => {
+    // to sort the notes by descending order
+    const notesSorted = notes.sort((a, b) => b.timeAdded - a.timeAdded)
+
+    const notesJSX = notesSorted.map(note => {
         return <Note body={note.body} color={note.color} id={note.id} key={note.id}/>
     })
 
