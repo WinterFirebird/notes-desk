@@ -46,6 +46,7 @@ a {
             grid-gap:20px;
             grid-template-columns: repeat(auto-fit, 300px);
             grid-auto-rows: minmax(100px, 300px);
+            justify-content: center;
         
             .addNote {
                 display: flex;
@@ -119,5 +120,4 @@ a {
 }
 
 
-
-
+@import "responsive";

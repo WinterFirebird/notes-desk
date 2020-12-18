@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useRef } from 'react'
+import ReactDOM from 'react-dom'
 import { dispatchContext } from './Main'
 import { GithubPicker } from 'react-color';
 
@@ -71,7 +72,6 @@ function Note(props) {
         setTempBgColor(color.hex)
     }
 
-
     const bodyEditable = <textarea value={tempBody} onChange={e => setTempBody(e.target.value)} className="note-textarea"></textarea> 
     const bodyReadonly = <textarea value={tempBody} onClick={() => setEditMode(true)} className="note-textarea" readOnly></textarea> 
 
@@ -84,7 +84,7 @@ function Note(props) {
 
 
     return (
-        <div className="note" style={style}>
+        <div className="note" style={style} tabIndex="1">
             <div className="note-toolbar">
                 {editMode? <>{colorPicker}{saveButton}{cancelButton}</> : <>{deleteButton}</> }
             </div>
