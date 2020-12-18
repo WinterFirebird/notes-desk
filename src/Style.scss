@@ -24,7 +24,12 @@ a {
     font-family: $defaultFontFamily;
 
     .app-header {
-        padding:1px; //margin collapsing fix
+        padding-top: 1px; //margin collapsing fix
+        padding: {
+            left: 5px;
+            right: 5px;
+        };
+
         h1 {
             color: $AppSecondaryColor;
         }

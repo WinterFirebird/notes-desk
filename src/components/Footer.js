@@ -4,7 +4,7 @@ function Footer() {
     return (
         <div className="app-footer">
             <footer>
-                <h4>Created by <a href="https://www.facebook.com/arman.grigoryan.7311/" target="_blank">Arman Grigoryan</a></h4>
+                <h4>Created by <a href="https://github.com/WinterFirebird" target="_blank">Arman Grigoryan</a></h4>
             </footer>
         </div>
     )
