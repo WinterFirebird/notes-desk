@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/notes-desk/static/css/main.79a2de73.chunk.css",
+    "main.js": "/notes-desk/static/js/main.80f09d5a.chunk.js",
+    "main.js.map": "/notes-desk/static/js/main.80f09d5a.chunk.js.map",
+    "runtime-main.js": "/notes-desk/static/js/runtime-main.a85fbe0d.js",
+    "runtime-main.js.map": "/notes-desk/static/js/runtime-main.a85fbe0d.js.map",
+    "static/css/2.c90d37ca.chunk.css": "/notes-desk/static/css/2.c90d37ca.chunk.css",
+    "static/js/2.7a444d55.chunk.js": "/notes-desk/static/js/2.7a444d55.chunk.js",
+    "static/js/2.7a444d55.chunk.js.map": "/notes-desk/static/js/2.7a444d55.chunk.js.map",
+    "static/js/3.b1dddf85.chunk.js": "/notes-desk/static/js/3.b1dddf85.chunk.js",
+    "static/js/3.b1dddf85.chunk.js.map": "/notes-desk/static/js/3.b1dddf85.chunk.js.map",
+    "index.html": "/notes-desk/index.html",
+    "static/css/2.c90d37ca.chunk.css.map": "/notes-desk/static/css/2.c90d37ca.chunk.css.map",
+    "static/css/main.79a2de73.chunk.css.map": "/notes-desk/static/css/main.79a2de73.chunk.css.map",
+    "static/js/2.7a444d55.chunk.js.LICENSE.txt": "/notes-desk/static/js/2.7a444d55.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/notes-desk/static/media/fontawesome-webfont.f691f37e.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a85fbe0d.js",
+    "static/css/2.c90d37ca.chunk.css",
+    "static/js/2.7a444d55.chunk.js",
+    "static/css/main.79a2de73.chunk.css",
+    "static/js/main.80f09d5a.chunk.js"
+  ]
+}
