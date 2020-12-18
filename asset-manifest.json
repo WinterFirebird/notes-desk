@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/notes-desk/static/css/main.c0ed7699.chunk.css",
+    "main.css": "/notes-desk/static/css/main.6e6b1f51.chunk.css",
     "main.js": "/notes-desk/static/js/main.80f09d5a.chunk.js",
     "main.js.map": "/notes-desk/static/js/main.80f09d5a.chunk.js.map",
     "runtime-main.js": "/notes-desk/static/js/runtime-main.a85fbe0d.js",
@@ -12,7 +12,7 @@
     "static/js/3.b1dddf85.chunk.js.map": "/notes-desk/static/js/3.b1dddf85.chunk.js.map",
     "index.html": "/notes-desk/index.html",
     "static/css/2.c90d37ca.chunk.css.map": "/notes-desk/static/css/2.c90d37ca.chunk.css.map",
-    "static/css/main.c0ed7699.chunk.css.map": "/notes-desk/static/css/main.c0ed7699.chunk.css.map",
+    "static/css/main.6e6b1f51.chunk.css.map": "/notes-desk/static/css/main.6e6b1f51.chunk.css.map",
     "static/js/2.7a444d55.chunk.js.LICENSE.txt": "/notes-desk/static/js/2.7a444d55.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/notes-desk/static/media/fontawesome-webfont.f691f37e.woff"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.a85fbe0d.js",
     "static/css/2.c90d37ca.chunk.css",
     "static/js/2.7a444d55.chunk.js",
-    "static/css/main.c0ed7699.chunk.css",
+    "static/css/main.6e6b1f51.chunk.css",
     "static/js/main.80f09d5a.chunk.js"
   ]
 }
