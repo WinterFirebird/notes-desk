@@ -1,8 +1,7 @@
 // import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Body from './components/Body';
