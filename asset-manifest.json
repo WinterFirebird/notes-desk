@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/notes-desk/static/css/main.a7c4ae30.chunk.css",
-    "main.js": "/notes-desk/static/js/main.23e6973c.chunk.js",
-    "main.js.map": "/notes-desk/static/js/main.23e6973c.chunk.js.map",
-    "runtime-main.js": "/notes-desk/static/js/runtime-main.ab3c32ca.js",
-    "runtime-main.js.map": "/notes-desk/static/js/runtime-main.ab3c32ca.js.map",
-    "static/css/2.c90d37ca.chunk.css": "/notes-desk/static/css/2.c90d37ca.chunk.css",
-    "static/js/2.682683ec.chunk.js": "/notes-desk/static/js/2.682683ec.chunk.js",
-    "static/js/2.682683ec.chunk.js.map": "/notes-desk/static/js/2.682683ec.chunk.js.map",
-    "static/js/3.41350fed.chunk.js": "/notes-desk/static/js/3.41350fed.chunk.js",
-    "static/js/3.41350fed.chunk.js.map": "/notes-desk/static/js/3.41350fed.chunk.js.map",
+    "main.css": "/notes-desk/static/css/main.e50720e5.chunk.css",
+    "main.js": "/notes-desk/static/js/main.d8ec16a7.chunk.js",
+    "main.js.map": "/notes-desk/static/js/main.d8ec16a7.chunk.js.map",
+    "runtime-main.js": "/notes-desk/static/js/runtime-main.b623ca5c.js",
+    "runtime-main.js.map": "/notes-desk/static/js/runtime-main.b623ca5c.js.map",
+    "static/css/2.6ad7eb70.chunk.css": "/notes-desk/static/css/2.6ad7eb70.chunk.css",
+    "static/js/2.66861a7c.chunk.js": "/notes-desk/static/js/2.66861a7c.chunk.js",
+    "static/js/2.66861a7c.chunk.js.map": "/notes-desk/static/js/2.66861a7c.chunk.js.map",
+    "static/js/3.e594b4bb.chunk.js": "/notes-desk/static/js/3.e594b4bb.chunk.js",
+    "static/js/3.e594b4bb.chunk.js.map": "/notes-desk/static/js/3.e594b4bb.chunk.js.map",
     "index.html": "/notes-desk/index.html",
-    "static/css/2.c90d37ca.chunk.css.map": "/notes-desk/static/css/2.c90d37ca.chunk.css.map",
-    "static/css/main.a7c4ae30.chunk.css.map": "/notes-desk/static/css/main.a7c4ae30.chunk.css.map",
-    "static/js/2.682683ec.chunk.js.LICENSE.txt": "/notes-desk/static/js/2.682683ec.chunk.js.LICENSE.txt",
-    "static/media/font-awesome.min.css": "/notes-desk/static/media/fontawesome-webfont.f691f37e.woff"
+    "static/css/2.6ad7eb70.chunk.css.map": "/notes-desk/static/css/2.6ad7eb70.chunk.css.map",
+    "static/css/main.e50720e5.chunk.css.map": "/notes-desk/static/css/main.e50720e5.chunk.css.map",
+    "static/js/2.66861a7c.chunk.js.LICENSE.txt": "/notes-desk/static/js/2.66861a7c.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/notes-desk/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.ab3c32ca.js",
-    "static/css/2.c90d37ca.chunk.css",
-    "static/js/2.682683ec.chunk.js",
-    "static/css/main.a7c4ae30.chunk.css",
-    "static/js/main.23e6973c.chunk.js"
+    "static/js/runtime-main.b623ca5c.js",
+    "static/css/2.6ad7eb70.chunk.css",
+    "static/js/2.66861a7c.chunk.js",
+    "static/css/main.e50720e5.chunk.css",
+    "static/js/main.d8ec16a7.chunk.js"
   ]
 }
