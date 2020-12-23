@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 import Main from './Main';
+import styled from 'styled-components';
 
 const AppBody = styled.div`
-    padding:40px 10px;
+    padding: 40px 10px;
 `;
 
-function Body() {
+const Body = (props) => {
   return (
     <AppBody>
       <Main />

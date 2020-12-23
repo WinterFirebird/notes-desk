@@ -1,7 +1,7 @@
 import React from 'react';
 import Note from './Note';
 
-function Notes(props) {
+const Notes = (props) => {
   const { notes } = props;
   // to sort the notes by descending order
   const notesSorted = notes.sort((a, b) => b.timeAdded - a.timeAdded);

@@ -10,30 +10,31 @@ const NotesGrid = styled.div`
     margin-right: auto;
     max-width: 1300px;
     display: grid;
-    grid-gap:20px;
+    grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, 300px);
     grid-auto-rows: minmax(100px, 300px);
     justify-content: center;
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 420px) {
         grid-template-columns: 250px;
         grid-template-rows: 100px;
         grid-auto-rows: 250px;
     }
 `;
 
-function Main() {
-  const initialState = [
-    {
-      id: 147286491,
-      body: 'Welcome to NotesDesk! \n\nYou can add your own notes here by clicking on the plus icon. \nTo edit the note or change its color, simply click on it. \nHave a great experience!',
-      color: '#FEF3BD',
-      timeAdded: 1608212136484,
-    },
-  ];
+const initialState = [
+  {
+    id: 147286491,
+    body: 'Welcome to NotesDesk! \n\nYou can add your own notes here by clicking on the plus icon. \nTo edit the note or change its color, simply click on it. \nHave a great experience!',
+    color: '#FEF3BD',
+    timeAdded: 1608212136484,
+  },
+];
+
+const Main = (props) => {
 
   const mainStateReducer = (value, action = {
-    type: null, state: null, id: null, color: null, timeAdded: null,
+    type: null, newNote: null, id: null, color: null, timeAdded: null,
   }) => {
     if (action.type === 'edit') {
       const newNotes = value;
@@ -53,7 +54,7 @@ function Main() {
     }
 
     if (action.type === 'add') {
-      const newNote = action.state;
+      const newNote = action.newNote;
       newNote.timeAdded = action.timeAdded;
       return [...value, newNote];
     }

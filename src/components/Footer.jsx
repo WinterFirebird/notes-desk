@@ -3,13 +3,13 @@ import styled from 'styled-components';
 
 const AppFooter = styled.div`
   padding: 20px;
-  background-color: black;
-  color: white;
+  background-color: #333;
+  color: #ffffff;
 `;
 
 const A = styled.a`
   text-decoration: none;
-  color: white;
+  color: #ffffff;
 `;
 
 function Footer() {

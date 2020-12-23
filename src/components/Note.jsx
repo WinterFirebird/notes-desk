@@ -1,18 +1,18 @@
-import React, { useContext, useState } from 'react';
-import styled from 'styled-components';
+import React, { useCallback, useContext, useState } from 'react';
 import { mainStateDispatchContext } from './Main';
+import brightnessByColor from './brightnessByColor';
+import styled from 'styled-components';
 import { GithubPicker } from 'react-color';
 import { Icon } from 'semantic-ui-react';
-import brightnessByColor from './brightnessByColor';
 
 const icons = {
-  delete: <Icon name="delete" />,
-  cancel: <Icon name="ban" />,
-  save: <Icon name="save" />,
+  delete: <Icon name='delete' />,
+  cancel: <Icon name='ban' />,
+  save: <Icon name='save' />,
 };
 
 const NoteWrapper = styled.div`
-  border:1px solid;
+  border: 1px solid;
   border-bottom-right-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -33,22 +33,23 @@ const NoteToolbar = styled.div`
 
 const NoteBody = styled.div`
   flex-grow: 1;
+  padding: 10px;
   textarea {
-    width: 97%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     background: none;
-    border:none;
-    outline:none;
+    border: none;
+    outline: none;
     color: inherit;
     padding: 10px 5px;
-    resize:none;
-    font-size:1rem;
-    font-family:inherit;
+    resize: none;
+    font-size: 1rem;
+    font-family: inherit;
   }
 }
 `;
 
-function Note(props) {
+const Note = (props) => {
   /**
    * the dispatch function of the state of 'Main' component 
    * @param {object} action
@@ -65,7 +66,7 @@ function Note(props) {
   /**
    * to pass the temp state to the main state
    */
-  const editSaveHandler = () => {
+  const editSaveHandler = useCallback(() => {
     mainStateDispatchFunction({
       type: 'edit',
       body: tempBody,
@@ -73,23 +74,23 @@ function Note(props) {
       id: props.id,
     });
     setEditMode(false);
-  };
+  });
   /**
    * to return the note to its last saved state
    */
-  const editCancelHandler = () => {
+  const editCancelHandler = useCallback(() => {
     setTempBody(props.body);
     setTempBgColor(props.color);
     setEditMode(false);
-  };
+  });
   /**
    * passes the chosen color to the temp. state of the note
    * @param {string} color
    * @param {object} event
    */
-  const handleColorChange = (color, event) => {
+  const handleColorChange = useCallback((color, event) => {
     setTempBgColor(color.hex);
-  };
+  });
   const bodyEditable = <textarea value={tempBody} onChange={e => setTempBody(e.target.value)}></textarea>;
   const bodyReadonly = <textarea value={tempBody} onClick={() => setEditMode(true)} readOnly></textarea>;
   const deleteButton = <button onClick={ () => mainStateDispatchFunction({type: 'delete', id: props.id})}>{ icons.delete }</button>;

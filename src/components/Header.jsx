@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Icon } from 'semantic-ui-react';
 
 const AppHeader = styled.div`
-  padding-top:25px; /*margin collapsing fix*/
-  padding:25px;
+  padding-top: 25px; /*margin collapsing fix*/
+  padding: 25px;
 `;
 
 const AppHeaderH1 = styled.h1`
@@ -12,7 +12,7 @@ const AppHeaderH1 = styled.h1`
 `;
 
 const AppHeaderH3 = styled.h3`
-  color:gray;
+  color: #808080;
 `;
 
 function Header() {

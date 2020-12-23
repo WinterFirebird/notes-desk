@@ -1,10 +1,10 @@
 // import logo from './logo.svg';
 import React from 'react';
-import './App.css';
-import styled, { createGlobalStyle } from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Body from './components/Body';
+import styled, { createGlobalStyle } from 'styled-components';
+import './App.css';
 
 const stylingVariables = {
   bgColor: '#fffcde',
@@ -17,18 +17,18 @@ export const styleContext = React.createContext();
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    font-size:16px;
+    font-size: 1em;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 420px) {
     :root {
-      font-size:14px;
+      font-size: 0.875em;
     }
   }
 `;
 
 const AppWrapper = styled.div`
-  text-align:center;
+  text-align: center;
   /**/
   background-color: ${stylingVariables.bgColor};
   min-height: 100vh;
@@ -37,7 +37,7 @@ const AppWrapper = styled.div`
   justify-content: space-between;
 `;
 
-function App() {
+const App = (props) => {
   return (
     <>
       <GlobalStyle />
