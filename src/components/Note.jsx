@@ -63,6 +63,7 @@ const Note = (props) => {
     backgroundColor: tempBgColor,
     color: ((brightnessByColor(tempBgColor)) > 150 ? '#2b2a2a' : '#fcfcfa'),
   };
+
   /**
    * to pass the temp state to the main state
    */
@@ -74,15 +75,18 @@ const Note = (props) => {
       id: props.id,
     });
     setEditMode(false);
-  });
+  }, [tempBody, tempBgColor, editMode]);
+
   /**
    * to return the note to its last saved state
    */
   const editCancelHandler = useCallback(() => {
+    console.log(`props.body ${props.body}, props.color ${props.color}`)
     setTempBody(props.body);
     setTempBgColor(props.color);
     setEditMode(false);
-  });
+  }, [tempBody, tempBgColor, editMode]);
+
   /**
    * passes the chosen color to the temp. state of the note
    * @param {string} color
@@ -90,7 +94,8 @@ const Note = (props) => {
    */
   const handleColorChange = useCallback((color, event) => {
     setTempBgColor(color.hex);
-  });
+  }, [tempBody, tempBgColor, editMode]);
+
   const bodyEditable = <textarea value={tempBody} onChange={e => setTempBody(e.target.value)}></textarea>;
   const bodyReadonly = <textarea value={tempBody} onClick={() => setEditMode(true)} readOnly></textarea>;
   const deleteButton = <button onClick={ () => mainStateDispatchFunction({type: 'delete', id: props.id})}>{ icons.delete }</button>;
