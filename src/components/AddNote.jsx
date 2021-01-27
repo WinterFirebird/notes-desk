@@ -8,15 +8,21 @@ const AddNoteWrapper = styled.div`
   justify-content: center;
   align-items: center;
   color: #333;
+  button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 3rem;
+    color: inherit;
+  }
 `;
 
-const AddNoteButton = styled.button`
-  background: none;
-  border: none;
-  outline: none;
-  font-size: 3rem;
-  color: inherit;
-`;
+const blankNoteTemplate = {
+  id: '',
+  body: '',
+  color: '#FEF3BD',
+  timeAdded: '',
+};
 
 const AddNote = (props) => {
   /**
@@ -25,31 +31,24 @@ const AddNote = (props) => {
    */
   const mainStateDispatchFunction = useContext(mainStateDispatchContext);
 
-  const [noteTemp, setNoteTemp] = useState({
-    id: '',
-    body: '',
-    color: '#FEF3BD',
-    timeAdded: '',
-  });
-
-  const addIcon = <Icon name='add' />;
-
   /**
-   * attaches a unique id to a blank note defined in its state and sends to
-   * Main component's dispatch function to
+   * attaches a unique id and a timestamp to a blank note and sends to
+   * Main component's dispatch function
    */
   const onAdd = useCallback(() => {
-    // const dateAdded = new Date();
+    let newBlankNote = blankNoteTemplate;
+    const uniqueId = Math.floor(Math.random() * (10**8));
     const addTime = new Date().getTime();
-    mainStateDispatchFunction({ type: 'add', newNote: noteTemp, timeAdded: addTime });
-    // the code below is to generate a new id for the next onAdd() event
-    const uniqueId = new Date().getUTCMilliseconds();
-    setNoteTemp({ ...noteTemp, id: uniqueId });
-  });
+    newBlankNote.id = uniqueId;
+    newBlankNote.timeAdded = addTime;
+    mainStateDispatchFunction({ type: 'add', newNote: newBlankNote});
+  }, []);
 
   return (
     <AddNoteWrapper>
-      <AddNoteButton onClick={() => onAdd()}>{addIcon}</AddNoteButton>
+      <button onClick={() => onAdd()}>
+        <Icon name='add' />
+      </button>
     </AddNoteWrapper>
   );
 }

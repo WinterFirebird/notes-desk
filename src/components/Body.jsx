@@ -3,7 +3,7 @@ import Main from './Main';
 import styled from 'styled-components';
 
 const AppBody = styled.div`
-    padding: 40px 10px;
+  padding: 40px 10px;
 `;
 
 const Body = (props) => {

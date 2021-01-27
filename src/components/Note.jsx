@@ -81,7 +81,6 @@ const Note = (props) => {
    * to return the note to its last saved state
    */
   const editCancelHandler = useCallback(() => {
-    console.log(`props.body ${props.body}, props.color ${props.color}`)
     setTempBody(props.body);
     setTempBgColor(props.color);
     setEditMode(false);

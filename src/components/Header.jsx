@@ -5,25 +5,23 @@ import { Icon } from 'semantic-ui-react';
 const AppHeader = styled.div`
   padding-top: 25px; /*margin collapsing fix*/
   padding: 25px;
-`;
-
-const AppHeaderH1 = styled.h1`
-  color: #000;
-`;
-
-const AppHeaderH3 = styled.h3`
-  color: #808080;
+  h1 {
+    color: #000;
+  }
+  h3 {
+    color: #808080;
+  }
 `;
 
 function Header() {
   return (
     <AppHeader>
       <header>
-        <AppHeaderH1>
+        <h1>
           <Icon name="sticky note" />
           NotesDesk
-        </AppHeaderH1>
-        <AppHeaderH3>Simple sticky notes app created with React.js</AppHeaderH3>
+        </h1>
+        <h3>Simple sticky notes app created with react.js</h3>
       </header>
     </AppHeader>
   );

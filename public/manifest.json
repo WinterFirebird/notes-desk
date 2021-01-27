@@ -1,6 +1,6 @@
 {
   "short_name": "NotesDesk",
-  "name": "NotesDesk: a simple react notes app",
+  "name": "NotesDesk",
   "icons": [
     {
       "src": "favicon.ico",
