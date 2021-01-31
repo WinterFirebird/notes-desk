@@ -1,5 +1,6 @@
-import React, { useCallback, useContext, useState } from 'react';
-import { mainStateDispatchContext } from './Main';
+import React, { useCallback, useState } from 'react';
+import { connect } from 'react-redux';
+import { editNote, deleteNote } from '../redux';
 import brightnessByColor from './brightnessByColor';
 import styled from 'styled-components';
 import { GithubPicker } from 'react-color';
@@ -50,26 +51,25 @@ const NoteBody = styled.div`
 `;
 
 const Note = (props) => {
-  /**
-   * the dispatch function of the state of 'Main' component 
-   * @param {object} action
-   */
-  const mainStateDispatchFunction = useContext(mainStateDispatchContext);
+  // functions for dispatching a delete or edit action
+  const { editNote, deleteNote } = props;
+
+  // temprorary values of the note
   const [tempBody, setTempBody] = useState(props.body);
   const [tempBgColor, setTempBgColor] = useState(props.color);
   const [editMode, setEditMode] = useState(false);
 
+  // styles of the note
   const style = {
     backgroundColor: tempBgColor,
     color: ((brightnessByColor(tempBgColor)) > 150 ? '#2b2a2a' : '#fcfcfa'),
   };
 
   /**
-   * to pass the temp state to the main state
+   * to pass the temp state to the redux store
    */
   const editSaveHandler = useCallback(() => {
-    mainStateDispatchFunction({
-      type: 'edit',
+    editNote({
       body: tempBody,
       color: tempBgColor,
       id: props.id,
@@ -87,7 +87,7 @@ const Note = (props) => {
   }, [tempBody, tempBgColor, editMode]);
 
   /**
-   * passes the chosen color to the temp. state of the note
+   * passes the chosen color to the temp state of the note
    * @param {string} color
    * @param {object} event
    */
@@ -95,10 +95,13 @@ const Note = (props) => {
     setTempBgColor(color.hex);
   }, [tempBody, tempBgColor, editMode]);
 
+
+  const deleteButton = <button onClick={ () => deleteNote(props.id)}>{ icons.delete }</button>;
+  // the editable textarea displayed when user clicks on the note
   const bodyEditable = <textarea value={tempBody} onChange={e => setTempBody(e.target.value)}></textarea>;
+  // the read-only textarea displayed when user isn't editing the note
   const bodyReadonly = <textarea value={tempBody} onClick={() => setEditMode(true)} readOnly></textarea>;
-  const deleteButton = <button onClick={ () => mainStateDispatchFunction({type: 'delete', id: props.id})}>{ icons.delete }</button>;
-  //note editing mode
+  // note editing mode
   const colorPicker = <GithubPicker onChangeComplete={handleColorChange}/>;
   const saveButton = <button onClick={() => editSaveHandler()}>{icons.save} Save</button>;
   const cancelButton = <button onClick={() => editCancelHandler()}>{icons.cancel} Cancel</button>;
@@ -112,6 +115,13 @@ const Note = (props) => {
       </NoteBody>
     </NoteWrapper>
   );
-}
+};
 
-export default React.memo(Note);
+const mapDispatchToProps = dispatch => {
+  return {
+    editNote: (payload = {id: null, color: null, body: null}) => dispatch(editNote(payload)),
+    deleteNote: (id) => dispatch(deleteNote(id)),
+  }
+};
+
+export default React.memo(connect(null, mapDispatchToProps)(Note)); 
