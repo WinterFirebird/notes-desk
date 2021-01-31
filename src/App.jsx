@@ -1,5 +1,7 @@
 // import logo from './logo.svg';
 import React from 'react';
+import { Provider } from 'react-redux';
+import notesStore from './redux/store';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Body from './components/Body';
@@ -39,7 +41,7 @@ const AppWrapper = styled.div`
 
 const App = (props) => {
   return (
-    <>
+    <Provider store={notesStore}>
       <GlobalStyle />
       <styleContext.Provider value={stylingVariables}>
         <AppWrapper>
@@ -48,7 +50,7 @@ const App = (props) => {
           <Footer />
         </AppWrapper>
       </styleContext.Provider>
-    </>
+    </Provider>
   );
 }
 
