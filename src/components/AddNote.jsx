@@ -1,9 +1,10 @@
-import React, { useState, useContext, useCallback } from 'react';
-import { mainStateDispatchContext } from './Main';
+import React, { useCallback } from 'react';
+import { connect } from 'react-redux';
+import { addNote } from '../redux';
 import styled from 'styled-components';
 import { Icon } from 'semantic-ui-react';
 
-const AddNoteWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,11 +26,8 @@ const blankNoteTemplate = {
 };
 
 const AddNote = (props) => {
-  /**
-   * the dispatch function of the state of 'Main' component
-   * @param {object} action
-   */
-  const mainStateDispatchFunction = useContext(mainStateDispatchContext);
+  // function for dispatching an adding a note action
+  const { addNote } = props;
 
   /**
    * attaches a unique id and a timestamp to a blank note and sends to
@@ -37,20 +35,24 @@ const AddNote = (props) => {
    */
   const onAdd = useCallback(() => {
     let newBlankNote = blankNoteTemplate;
-    const uniqueId = Math.floor(Math.random() * (10**8));
-    const addTime = new Date().getTime();
-    newBlankNote.id = uniqueId;
-    newBlankNote.timeAdded = addTime;
-    mainStateDispatchFunction({ type: 'add', newNote: newBlankNote});
+    newBlankNote.id = Math.floor(Math.random() * (10**8));
+    newBlankNote.timeAdded = new Date().getTime();
+    addNote(newBlankNote);
   }, []);
 
   return (
-    <AddNoteWrapper>
+    <Wrapper>
       <button onClick={() => onAdd()}>
         <Icon name='add' />
       </button>
-    </AddNoteWrapper>
+    </Wrapper>
   );
-}
+};
 
-export default AddNote;
+const mapDispatchToProps = dispatch => {
+  return {
+    addNote: (newNote) => dispatch(addNote(newNote)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(AddNote);
